@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Monitor</title>
-    <link rel="stylesheet" href="/static/css/semantic.min.css">
+    <link rel="stylesheet" href="/static/css/semantic.css">
     <link rel="stylesheet" href="/static/css/index.css">
     <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/semantic.min.js"></script>
+    <script src="/static/js/semantic.js"></script>
 </head>
 <body>
     <div class="ui sidebar grey inverted vertical menu">
@@ -41,6 +41,7 @@
             $('.sub').click(function(){
                 $('.sub').removeClass("active")
                 $(this).addClass("active")
+				$('.ui.sidebar').sidebar('toggle');
             })
         </script>
     </div>
