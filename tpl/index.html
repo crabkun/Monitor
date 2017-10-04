@@ -11,84 +11,84 @@
     <script src="/static/js/semantic.min.js"></script>
 </head>
 <body>
-<div class="ui sidebar grey inverted vertical menu">
-    <div class="item">
-        <div class="menu">
-            <a class="active item sub">首页</a>
+    <div class="ui sidebar grey inverted vertical menu">
+        <div class="item">
+            <div class="menu">
+                <a class="active item sub">首页</a>
+            </div>
         </div>
+        <div class="item">
+            <div class="header">插件</div>
+            <div class="menu">
+                <a class="item sub">添加插件</a>
+                <a class="item sub">插件管理</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">已安装插件</div>
+            <div class="menu plugin-menu">
+                {{range .pluginArr}}<a class="item sub" href="/plugins/{{.PluginInfo.Name}}/" target="if-plugin">{{.PluginInfo.DisplayName}}</a>{{end}}
+            </div>
+        </div>
+        <div class="item">
+            <div class="header">关于</div>
+            <div class="menu">
+                <a class="item sub">关于作者</a>
+                <a class="item sub">插件开发文档</a>
+            </div>
+        </div>
+        <script>
+            $('.sub').click(function(){
+                $('.sub').removeClass("active")
+                $(this).addClass("active")
+            })
+        </script>
     </div>
-    <div class="item">
-        <div class="header">插件</div>
-        <div class="menu">
-            <a class="item sub">添加插件</a>
-            <a class="item sub">插件管理</a>
-        </div>
-    </div>
-    <div class="item">
-        <div class="header">已安装插件</div>
-        <div class="menu plugin-menu">
-            {{range .pluginArr}}<a class="item sub" href="/plugins/{{.PluginInfo.Name}}/" target="if-plugin">{{.PluginInfo.DisplayName}}</a>{{end}}
-        </div>
-    </div>
-    <div class="item">
-        <div class="header">关于</div>
-        <div class="menu">
-            <a class="item sub">关于作者</a>
-            <a class="item sub">插件开发文档</a>
-        </div>
-    </div>
-    <script>
-        $('.sub').click(function(){
-            $('.sub').removeClass("active")
-            $(this).addClass("active")
-        })
-    </script>
-</div>
-<div class="pusher">
-    <div class="ui teal inverted menu top-menu">
-        <a class="icon item" onclick="$('.ui.sidebar').sidebar('toggle');">
-            <i class="content icon"></i>
-        </a>
-        <div class="icon item" >
-            Monitor 1.0 (Author:螃蟹) 测试版
-        </div>
-        <div class="right menu">
-            <a class="icon item" onclick="$('.ui.modal').modal('show');">
-                <i class="user icon"></i>
+    <div class="pusher">
+        <div class="ui teal inverted menu top-menu">
+            <a class="icon item" onclick="$('.ui.sidebar').sidebar('toggle');">
+                <i class="content icon"></i>
             </a>
+            <div class="icon item" >
+                Monitor 1.0 (Author:螃蟹) 测试版
+            </div>
+            <div class="right menu">
+                <a class="icon item" onclick="$('.ui.modal').modal('show');">
+                    <i class="user icon"></i>
+                </a>
+            </div>
         </div>
+        <iframe src="" style="width: 100%;" name="if-plugin" id="if-plugin" frameborder="0"></iframe>
     </div>
-    <iframe src="" style="width: 100%;" name="if-plugin" id="if-plugin" frameborder="0"></iframe>
-</div>
-<div class="ui mini modal">
-    <div class="header">
-        登录
-    </div>
-    <div class="content">
-        <form class="ui form">
-            <div class="field">
-                <label>管理密码</label>
-                <input type="text" name="password">
-            </div>
-            <div class="field">
-                <label>验证码</label>
-                <input type="text" name="cpt">
-            </div>
-            <div class="field">
-
-            </div>
-        </form>
-    </div>
-    <div class="actions">
-        <div class="ui black deny button">
-            取消
-        </div>
-        <div class="ui positive right labeled icon button">
+    <div class="ui mini modal">
+        <div class="header">
             登录
-            <i class="checkmark icon"></i>
+        </div>
+        <div class="content">
+            <form class="ui form">
+                <div class="field">
+                    <label>管理密码</label>
+                    <input type="text" name="password">
+                </div>
+                <div class="field">
+                    <label>验证码</label>
+                    <input type="text" name="cpt">
+                </div>
+                <div class="field">
+
+                </div>
+            </form>
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                取消
+            </div>
+            <div class="ui positive right labeled icon button">
+                登录
+                <i class="checkmark icon"></i>
+            </div>
         </div>
     </div>
-</div>
 </body>
 <script>
     $('.ui.sidebar').sidebar({dimPage:false});
