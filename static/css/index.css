@@ -1,0 +1,11 @@
+html{
+    overflow: hidden;
+}
+.pusher{
+    background: rgb(239,239,239)!important;
+    height: 100%;
+}
+.top-menu{
+    margin-bottom: 0!important;
+    border-radius: 0!important;
+}
